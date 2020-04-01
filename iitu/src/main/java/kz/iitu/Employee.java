@@ -5,7 +5,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 
 @Entity
-@Table(name="EMPLOYEE")
+@Table(name="employee1")
 public class Employee extends AbstractPersistable<Long>{
 
 	private String firstName;
@@ -20,18 +20,18 @@ public class Employee extends AbstractPersistable<Long>{
 	
 	private float commRate;
 		
-//	 public Employee(){
-//	 }
-//	 public Employee( String first, String last, 
-//			 		double fixSalary, double hourR, 
-//			 		int hoursWork, float commR){
-//		 firstName = first;
-//		 lastName = last;
-//		 fixedSalary = fixSalary;
-//		 hourRate = hourR;
-//		 hoursWorked = hoursWork;
-//		 commRate = commR;
-//	 }
+	 public Employee(){
+	 }
+	 public Employee( String first, String last,
+			 		double fixSalary, double hourR,
+			 		int hoursWork, float commR){
+		 firstName = first;
+		 lastName = last;
+		 fixedSalary = fixSalary;
+		 hourRate = hourR;
+		 hoursWorked = hoursWork;
+		 commRate = commR;
+	 }
 	 
 	 public void setFirstName( String first ){ firstName = first; }
 	 public String getFirstName(){ return firstName; } 
@@ -50,6 +50,16 @@ public class Employee extends AbstractPersistable<Long>{
 	 
 	 public void setCommRate(float commR) { commRate = commR; }
 	 public float getCommRate() { return commRate; }
-	
-	 
- } 
+
+	@Override
+	public String toString() {
+		return "Employee{" +
+				"firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", fixedSalary=" + fixedSalary +
+				", hourRate=" + hourRate +
+				", hoursWorked=" + hoursWorked +
+				", commRate=" + commRate +
+				'}' + "\n";
+	}
+}
